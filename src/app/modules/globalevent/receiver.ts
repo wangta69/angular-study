@@ -41,8 +41,8 @@ import {Subscription} from 'rxjs/Subscription'
   `]
 })
 export class ReceiverComponent implements OnDestroy {
-  private subscription: Subscription;
-  private messages = [];
+	private subscription: Subscription;
+	private messages = [];
 
   constructor(private messageService: MessageService) {
 	this.subscribe();
@@ -60,12 +60,11 @@ export class ReceiverComponent implements OnDestroy {
 	this.messages = [];
   }
 
-  subscribe() {
-	this.subscription = this.messageService.subscribe('receiver', (payload) => {
-	  this.messages.push(payload);
-	});
-
-  }
+	subscribe() {
+		this.subscription = this.messageService.subscribe('receiver', (payload) => {
+			this.messages.push(payload);
+		});
+	}
 
   unsubscribe() {
 	this.subscription.unsubscribe();

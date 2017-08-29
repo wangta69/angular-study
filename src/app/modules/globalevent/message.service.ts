@@ -16,6 +16,7 @@ export class MessageService {
 	private handler = new Subject<Message>();
 
 	broadcast(type: string, payload: any) {
+		console.log("broadcast", type, payload);
 		this.handler.next({ type, payload });
 	}
 

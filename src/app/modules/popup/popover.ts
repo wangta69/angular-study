@@ -9,7 +9,6 @@ import { Popup2Module, Popup2Component }		from './popup2';
 
 @Component({
 	selector: 'pop-over',
-	//entryComponents: [LayerPopFightCreateComponent, LayerPopClaimComponent, LayerPopChatRoomSetComponent],
 	template: `
 	<div #container (popclosed)="closePopover($event)"></div>
 	`
@@ -118,6 +117,6 @@ export class PopOverComponent {
 	imports: [ Popup1Module, Popup2Module ],
 	exports: [ PopOverComponent ],
 	providers: [  ],
-	entryComponents: [ PopOverComponent, Popup1Component,Popup2Component ]
+	entryComponents: [ Popup1Component,Popup2Component ] /* PopOverComponent */
 })
 export class PopOverModule { }

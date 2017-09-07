@@ -8,7 +8,7 @@ import { FilterModule }					from './modules/filter/filter.common';
 	selector: 'app-root',
 	template: `
 	<h2>{{name}}</h2>
-		<!-- <p *ngFor="let member of members | filter:key:value| sortBy: 'likes'; let i  = index"></p> -->
+
 		<button (click)="filterVal = 'M'">Men</button><button (click)="filterVal = 'W'">Women</button><button (click)="filterVal = ''">Reset</button>
 		<br />
 		<button (click)="orderVal = 'asc'">Age asc</button><button (click)="orderVal = 'desc'">Age desc</button><button (click)="orderVal = ''">Reset</button>

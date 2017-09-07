@@ -24,7 +24,7 @@ export class Dynamic2Component {
 @Component({
 	selector: 'dynamiccontainer',
 	template: `
-	<div #container (popclosed)="closePopover($event)"></div>
+	<ng-template #container></ng-template>
 	`
 })
 
@@ -85,7 +85,7 @@ export class DynamicComponent implements OnChanges {
 		this.currentComponent = component;
 
 		//close popover listen (dynamic component로 부터 데이타 받을 때 사용)
-		//component.instance.popclosed.subscribe(() => this.closePopover());
+		component.instance.popclosed.subscribe(() => this.closePopover());
 
 	}
 

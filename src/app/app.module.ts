@@ -1,51 +1,30 @@
-import {Component, NgModule, VERSION} 	from '@angular/core'
-import {BrowserModule} 					from '@angular/platform-browser'
-import { BrowserAnimationsModule }		from '@angular/platform-browser/animations';
-import { MaterialModule }				from '@angular/material';
-import { FilterModule }					from './modules/filter/filter.common';
+import {Component, NgModule, VERSION,  ReflectiveInjector} 	from '@angular/core'//NgZone,
+import { CommonModule }							from '@angular/common';
+import {BrowserModule} 							from '@angular/platform-browser'
+import { BrowserAnimationsModule }				from '@angular/platform-browser/animations';
+import { FormsModule }							from '@angular/forms';
+import { DatePickerModule }						from './modules/date.picker/datepicker.module';
 
 @Component({
 	selector: 'app-root',
 	template: `
-	<h2>{{name}}</h2>
-		<!-- <p *ngFor="let member of members | filter:key:value| sortBy: 'likes'; let i  = index"></p> -->
-		<button (click)="filterVal = 'M'">Men</button><button (click)="filterVal = 'W'">Women</button><button (click)="filterVal = ''">Reset</button>
-		<br />
-		<button (click)="orderVal = 'asc'">Age asc</button><button (click)="orderVal = 'desc'">Age desc</button><button (click)="orderVal = ''">Reset</button>
-
-		<p *ngFor="let member of members | filter:'gender':filterVal| sortBy: sortVal : orderVal; let i  = index">{{member.age}}/{{member.name}}/{{member.gender}}</p>
-
-
-
+		<input (click)="picker.open()" [mdDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="datepicker.SearchDate">
+		<md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+		<md-datepicker #picker touchUi="true"></md-datepicker>
 		`,
 })
 
 
-export class App {
-	name;
-	members = [
-		{age:12, name:'abc1', gender:'M'}
-		,{age:13, name:'abc2', gender:'W'}
-		,{age:14, name:'abc3', gender:'W'}
-		,{age:13, name:'abc4', gender:'M'}
-		,{age:12, name:'abc5', gender:'M'}
-	]
-	filterVal = '';
-	sortVal = 'age'
-
-
-	constructor() {
-		//console.log(VERSION);
-		this.name = VERSION.full;
-	}
-
+export class App{
+	datepicker = {SearchDate:new Date()}
+	constructor( ) {}
 
 }
 
 @NgModule({
-	imports: [ BrowserModule, MaterialModule, BrowserAnimationsModule, FilterModule ],
 	declarations: [ App ],
+	imports: [ CommonModule, BrowserModule, BrowserAnimationsModule, FormsModule, DatePickerModule],
 	bootstrap: [ App ],
-	providers: [  ]
+	providers: [   ]//NgZone
 })
 export class AppModule {}

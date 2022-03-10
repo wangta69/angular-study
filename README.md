@@ -2,11 +2,13 @@
 
 ## socket io
 ```
+npm i socket.io-client
 npm i ng-node-socket
 ```
 
 app.module.ts
 ```
+import { SocketService } from 'ng-node-socket';
 @NgModule({
     providers: [
         SocketMultiService,

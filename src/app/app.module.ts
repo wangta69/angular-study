@@ -1,30 +1,28 @@
-import {Component, NgModule, VERSION,  ReflectiveInjector} 	from '@angular/core'//NgZone,
-import { CommonModule }							from '@angular/common';
-import {BrowserModule} 							from '@angular/platform-browser'
-import { BrowserAnimationsModule }				from '@angular/platform-browser/animations';
-import { FormsModule }							from '@angular/forms';
-import { DatePickerModule }						from './modules/date.picker/datepicker.module';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-@Component({
-	selector: 'app-root',
-	template: `
-		<input (click)="picker.open()" [mdDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="datepicker.SearchDate">
-		<md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
-		<md-datepicker #picker touchUi="true"></md-datepicker>
-		`,
-})
-
-
-export class App{
-	datepicker = {SearchDate:new Date()}
-	constructor( ) {}
-
-}
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import {DomComponent1} from './dom-element/step1.component';
+import {DomComponent2} from './dom-element/step2.component';
+import {DomComponent3} from './dom-element/step3.component';
+import {DomComponent4} from './dom-element/step4.component';
+import {HighlightDirective} from './dom-element/step2.highlight.directive';
 
 @NgModule({
-	declarations: [ App ],
-	imports: [ CommonModule, BrowserModule, BrowserAnimationsModule, FormsModule, DatePickerModule],
-	bootstrap: [ App ],
-	providers: [   ]//NgZone
+  declarations: [
+    AppComponent,
+    DomComponent1,
+    DomComponent2,
+    DomComponent3,
+    DomComponent4,
+    HighlightDirective,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

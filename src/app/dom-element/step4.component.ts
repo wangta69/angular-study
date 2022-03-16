@@ -1,3 +1,5 @@
+import { Component, ViewChild, ViewChildren, OnInit, ElementRef, AfterViewInit, Renderer2, AfterViewChecked, QueryList } from '@angular/core';
+
 @Component({
   selector: 'app-parent',
   template: `<p>parent works!</p>
@@ -5,9 +7,9 @@
   <button (click)='removeChild()'>remove child</button>`,
   styleUrls: ['./parent.component.css']
 })
-export class ParentComponent implements AfterViewChecked{
+export class DomComponent4 implements AfterViewChecked{
 
-  @ViewChildren('child', {read: ElementRef}) childComp:QueryList<ElementRef>
+  @ViewChildren('child', {read: ElementRef}) childComp:QueryList<ElementRef<any>> = {} as ElementRef;
 
   constructor(private renderer: Renderer2, private host: ElementRef) {
   }

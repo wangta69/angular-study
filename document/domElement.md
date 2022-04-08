@@ -135,7 +135,7 @@ export class DomComponent5 implements OnInit, AfterViewInit{
 }
 ```
 
-rederer의 활용
+##### rederer의 활용
 ```
 this.renderer.appendChild(this.el.nativeElement, div);
 this.renderer.removeChild(parent.nativeElement, child);
@@ -150,7 +150,7 @@ this.renderer.selectRootElement("#chatinput").focus();
 ```
 
 ## 내가 많이 사용하는 방법
-실제로 내가 많이 사용하는 것은 classList를 활용하는 방법이다.
+##### 실제로 내가 많이 사용하는 것은 classList를 활용하는 방법이다.
 ```
 # el은 nativeElement를 의미
 el.classList.toggle(cls);

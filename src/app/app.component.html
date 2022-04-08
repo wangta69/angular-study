@@ -1,18 +1,49 @@
-<ul>
-    <li>
-        <a href="/dome-element/step1">Dom 다루기1>> ElementRef >> setAttribute </a>
-    <li>
-    <li>
-        <a href="/dome-element/step2">Dom 다루기2 >>  ElementRef(directive) >> setAttribute </a>
-    <li>
-    <li>
-        <a href="/dome-element/step3">Dom 다루기3 >>  Renderer2 >> setAttribute </a>
-    <li>
-    <li>
-        <a href="/dome-element/step4">Dom 다루기4 >> QueryList</a>
-    <li>
-        <li>
-            <a href="/dome-element/step5">Dom 다루기5 >> create, append, remove </a>
-        <li>
-</ul>
-<router-outlet></router-outlet>
+<div style="display: flex;justify-content: space-between;">
+    <div style="width: 50%">
+        <ul>
+            <li>
+                Dom 다루기
+                <ul>
+                    <li>
+                        <a href="/dome-element/step1">1. ElementRef >> setAttribute </a>
+                    </li>
+                    <li>
+                        <a href="/dome-element/step2">2. ElementRef(directive) >> setAttribute </a>
+                    </li>
+                    <li>
+                        <a href="/dome-element/step3">3. Renderer2 >> setAttribute </a>
+                    </li>
+                    <li>
+                        <a href="/dome-element/step4">4. QueryList</a>
+                    </li>
+                    <li>
+                        <a href="/dome-element/step5">5. create, append, remove </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Canvas 다루기
+                <ul>
+                    <li>
+                        <a href="/canvas/step1">1. Text 출력 </a>
+                    </li>
+                    <li>
+                        <a href="/canvas/step2">2. animation 및 다각형 그리기 </a>
+                    </li>
+                    <li>
+                        <a href="/canvas/step3">3. 네온효과 사각형 그리기 </a>
+                    </li>
+                    <li>
+                        <a href="/canvas/step4">4. Gradient </a>
+                    </li>
+                    <li>
+                        <a href="/canvas/step5">5. Draw Image </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div style="width: 50%">
+        <router-outlet></router-outlet>
+    </div>
+</div>

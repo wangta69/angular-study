@@ -1,24 +1,23 @@
-import { Component, ViewChild, ViewChildren, OnInit, ElementRef, AfterViewInit, Renderer2, AfterViewChecked, QueryList } from '@angular/core';
+ import { Component, ViewChildren, ElementRef, AfterViewInit, Renderer2, QueryList } from '@angular/core';
 
 @Component({
   selector: 'app-parent',
   template: `<p>parent works!</p>
-  <app-child #child></app-child>
+  <div #child>11</div>
+  <div #child>22</div>
+  <div #child>33</div>
   <button (click)='removeChild()'>remove child</button>`,
-  styleUrls: ['./parent.component.css']
 })
-export class DomComponent4 implements AfterViewChecked{
+export class DomComponent4 implements AfterViewInit{
+    @ViewChildren('child', {read: ElementRef}) childComp!:QueryList<any>;
+    constructor(private renderer: Renderer2, private host: ElementRef) {
+    }
+    ngAfterViewInit(){
+        console.log(this.childComp.toArray());
+    }
 
-  @ViewChildren('child', {read: ElementRef}) childComp:QueryList<ElementRef<any>> = {} as ElementRef;
-
-  constructor(private renderer: Renderer2, private host: ElementRef) {
-  }
-
-  ngAfterViewChecked() {
-    console.log(this.childComp.length)
-  }
-
-  removeChild(){
-    this.renderer.removeChild(this.host.nativeElement, this.childComp.first.nativeElement);
-  }
+    removeChild(){
+        console.log(this.childComp.toArray());
+        this.renderer.removeChild(this.host.nativeElement, this.childComp.first.nativeElement);
+    }
 }

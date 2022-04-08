@@ -7,6 +7,7 @@ import {DomComponent1} from './dom-element/step1.component';
 import {DomComponent2} from './dom-element/step2.component';
 import {DomComponent3} from './dom-element/step3.component';
 import {DomComponent4} from './dom-element/step4.component';
+import {DomComponent5} from './dom-element/step5.component';
 import {HighlightDirective} from './dom-element/step2.highlight.directive';
 
 @NgModule({
@@ -16,6 +17,7 @@ import {HighlightDirective} from './dom-element/step2.highlight.directive';
     DomComponent2,
     DomComponent3,
     DomComponent4,
+    DomComponent5,
     HighlightDirective,
   ],
   imports: [

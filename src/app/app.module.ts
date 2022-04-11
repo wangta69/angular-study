@@ -16,6 +16,9 @@ import {CanvasComponent3} from './canvas/step3.component';
 import {CanvasComponent4} from './canvas/step4.component';
 import {CanvasComponent5} from './canvas/step5.component';
 
+import {SoundComponent1} from './sounds/step1.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +33,7 @@ import {CanvasComponent5} from './canvas/step5.component';
     CanvasComponent3,
     CanvasComponent4,
     CanvasComponent5,
+    SoundComponent1,
   ],
   imports: [
     BrowserModule,

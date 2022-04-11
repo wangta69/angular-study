@@ -55,3 +55,6 @@ export class AppComponent implements OnDestroy {
 
 ## Canvas 다루기
 [DOM Element](/document/canvas.md "Canvas")
+
+## Sound  다루기
+[DOM Element](/document/sound.md "Sound")

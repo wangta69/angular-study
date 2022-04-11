@@ -10,6 +10,7 @@ import {CanvasComponent2} from './canvas/step2.component';
 import {CanvasComponent3} from './canvas/step3.component';
 import {CanvasComponent4} from './canvas/step4.component';
 import {CanvasComponent5} from './canvas/step5.component';
+import {SoundComponent1} from './sounds/step1.component';
 
 const routes: Routes = [
     { path: 'dome-element/step1', component: DomComponent1 },
@@ -22,6 +23,7 @@ const routes: Routes = [
     { path: 'canvas/step3', component: CanvasComponent3 },
     { path: 'canvas/step4', component: CanvasComponent4 },
     { path: 'canvas/step5', component: CanvasComponent5 },
+    { path: 'sounds/step1', component: SoundComponent1 },
 ];
 
 @NgModule({

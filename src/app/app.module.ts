@@ -16,6 +16,10 @@ import {CanvasComponent3} from './canvas/step3.component';
 import {CanvasComponent4} from './canvas/step4.component';
 import {CanvasComponent5} from './canvas/step5.component';
 
+import {CanvasEffectComponent1} from './canvas-effect/step1.component';
+import {CanvasEffectComponent2} from './canvas-effect/step2.component';
+import {CanvasEffectComponent3} from './canvas-effect/step3.component';
+
 import {SoundComponent1} from './sounds/step1.component';
 
 
@@ -34,6 +38,9 @@ import {SoundComponent1} from './sounds/step1.component';
     CanvasComponent4,
     CanvasComponent5,
     SoundComponent1,
+    CanvasEffectComponent1,
+    CanvasEffectComponent2,
+    CanvasEffectComponent3,
   ],
   imports: [
     BrowserModule,

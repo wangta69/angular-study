@@ -3,36 +3,21 @@ import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 @Component({
     selector: 'app-root',
     template:`
-    <canvas #canvasId>
+    <canvas #canvasId
+    (document:mousemove)="onMouseMove($event)"
+    >
     </canvas>`
 })
 export class CanvasEffectComponent3 implements AfterViewInit{
     @ViewChild('canvasId', {static: true}) canvasRef: ElementRef<HTMLCanvasElement> = {} as ElementRef;
     private canvas: any;
     private ctx: any;
-    private opts: any;
-
-    private w!: number;
-    private h!: number;
-    private tick = 0;
-    private lines: any = [];
-    private dieX!: number;
-    private dieY!: number;
-
-    private baseRad!: number;
-
     private light = {
         x: 160,
         y: 200
     }
 
-
-
-    private boxes = [];
-    // c.width = cw * dpr;
-    // c.height = ch * dpr;
-    // ctx.scale(dpr, dpr);
-
+    private boxes: any = [];
 
     constructor(
     ) {
@@ -43,28 +28,33 @@ export class CanvasEffectComponent3 implements AfterViewInit{
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
         this.ctx = this.canvas.getContext('2d');
-        this.w = this.canvas.width;
-        this.h = this.canvas.height;
 
+        this.resize();
+        this.draw();
 
+        while (this.boxes.length < 14) {
+            this.boxes.push(new Box(this));
+        }
+
+        window.onresize = this.resize;
     }
 
-
-    // var c = document.getElementById("canvas");
-    // var ctx = c.getContext("2d");
-
     private resize() {
-        var box = this.canvas.getBoundingClientRect();
+        const box = this.canvas.getBoundingClientRect();
         this.canvas.width = box.width;
         this.canvas.height = box.height;
     }
 
+    public onMouseMove(e: any) {
 
+        this.light.x = e.offsetX == undefined ? e.layerX : e.offsetX;
+        this.light.y = e.offsetY == undefined ? e.layerY : e.offsetY;
+    }
 
     private drawLight() {
         this.ctx.beginPath();
         this.ctx.arc(this.light.x, this.light.y, 1000, 0, 2 * Math.PI);
-        var gradient = this.ctx.createRadialGradient(this.light.x, this.light.y, 0, this.light.x, this.light.y, 1000);
+        let gradient = this.ctx.createRadialGradient(this.light.x, this.light.y, 0, this.light.x, this.light.y, 1000);
         gradient.addColorStop(0, "#3b4654");
         gradient.addColorStop(1, "#2c343f");
         this.ctx.fillStyle = gradient;
@@ -79,58 +69,38 @@ export class CanvasEffectComponent3 implements AfterViewInit{
         this.ctx.fill();
     }
 
-
-
-
-
     private draw() {
-        this.ctx.clearRect(0, 0, c.width, c.height);
-        drawLight();
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.drawLight();
 
-        for (var i = 0; i < boxes.length; i++) {
-            boxes[i].rotate();
-            boxes[i].drawShadow();
+        for (let i = 0; i < this.boxes.length; i++) {
+            this.boxes[i].rotate();
+            this.boxes[i].drawShadow();
         };
-        for (var i = 0; i < boxes.length; i++) {
-            collisionDetection(i)
-            boxes[i].draw();
+        for (var i = 0; i < this.boxes.length; i++) {
+            this.collisionDetection(i)
+            this.boxes[i].draw();
         };
-        requestAnimationFrame(draw);
+
+        window.requestAnimationFrame(() => this.draw());
     }
 
-    resize();
-    draw();
-
-    while (boxes.length < 14) {
-        boxes.push(new Box());
-    }
-
-    window.onresize = resize;
-    c.onmousemove = function(e) {
-        light.x = e.offsetX == undefined ? e.layerX : e.offsetX;
-        light.y = e.offsetY == undefined ? e.layerY : e.offsetY;
-    }
-
-
-    private collisionDetection(b){
-        for (var i = boxes.length - 1; i >= 0; i--) {
+    private collisionDetection(b: number){
+        for (let i = this.boxes.length - 1; i >= 0; i--) {
             if(i != b){
-                var dx = (boxes[b].x + boxes[b].half_size) - (boxes[i].x + boxes[i].half_size);
-                var dy = (boxes[b].y + boxes[b].half_size) - (boxes[i].y + boxes[i].half_size);
+                var dx = (this.boxes[b].x + this.boxes[b].half_size) - (this.boxes[i].x + this.boxes[i].half_size);
+                var dy = (this.boxes[b].y + this.boxes[b].half_size) - (this.boxes[i].y + this.boxes[i].half_size);
                 var d = Math.sqrt(dx * dx + dy * dy);
-                if (d < boxes[b].half_size + boxes[i].half_size) {
-                    boxes[b].half_size = boxes[b].half_size > 1 ? boxes[b].half_size-=1 : 1;
-                    boxes[i].half_size = boxes[i].half_size > 1 ? boxes[i].half_size-=1 : 1;
+                if (d < this.boxes[b].half_size + this.boxes[i].half_size) {
+                    this.boxes[b].half_size = this.boxes[b].half_size > 1 ? this.boxes[b].half_size-=1 : 1;
+                    this.boxes[i].half_size = this.boxes[i].half_size > 1 ? this.boxes[i].half_size-=1 : 1;
                 }
             }
         }
     }
-
 }
 
-
 class Box {
-
     private half_size: number;
     private x: number;
     private y: number;
@@ -153,24 +123,21 @@ class Box {
 
 
 
-    private getDots () {
-
-        var full = (Math.PI * 2) / 4;
-
-
-        var p1 = {
+    private getDots (): any {
+        const full = (Math.PI * 2) / 4;
+        const p1 = {
             x: this.x + this.half_size * Math.sin(this.r),
             y: this.y + this.half_size * Math.cos(this.r)
         };
-        var p2 = {
+        const p2 = {
             x: this.x + this.half_size * Math.sin(this.r + full),
             y: this.y + this.half_size * Math.cos(this.r + full)
         };
-        var p3 = {
+        const p3 = {
             x: this.x + this.half_size * Math.sin(this.r + full * 2),
             y: this.y + this.half_size * Math.cos(this.r + full * 2)
         };
-        var p4 = {
+        const p4 = {
             x: this.x + this.half_size * Math.sin(this.r + full * 3),
             y: this.y + this.half_size * Math.cos(this.r + full * 3)
         };
@@ -182,13 +149,13 @@ class Box {
             p4: p4
         };
     }
-    private rotate() {
-        var speed = (60 - this.half_size) / 20;
+    public rotate() {
+        const speed = (60 - this.half_size) / 20;
         this.r += speed * 0.002;
         this.x += speed;
         this.y += speed;
     }
-    private draw() {
+    public draw() {
         var dots = this.getDots();
         this.parent.ctx.beginPath();
         this.parent.ctx.moveTo(dots.p1.x, dots.p1.y);
@@ -206,13 +173,13 @@ class Box {
             this.x -= this.parent.canvas.width + 100;
         }
     }
-    private drawShadow() {
+    public drawShadow() {
         const dots = this.getDots();
         const angles = [];
         const points = [];
 
         for (const dot in dots) {
-            const angle = Math.atan2(light.y - dots[dot].y, light.x - dots[dot].x);
+            const angle = Math.atan2(this.parent.light.y - dots[dot].y, this.parent.light.x - dots[dot].x);
             const endX = dots[dot].x + this.shadow_length * Math.sin(-angle - Math.PI / 2);
             const endY = dots[dot].y + this.shadow_length * Math.cos(-angle - Math.PI / 2);
             angles.push(angle);

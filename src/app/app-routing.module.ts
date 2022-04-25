@@ -14,6 +14,9 @@ import {SoundComponent1} from './sounds/step1.component';
 import {CanvasEffectComponent1} from './canvas-effect/step1.component';
 import {CanvasEffectComponent2} from './canvas-effect/step2.component';
 import {CanvasEffectComponent3} from './canvas-effect/step3.component';
+import {CanvasEffectComponent4} from './canvas-effect/step4.component';
+import {CanvasEffectComponent5} from './canvas-effect/step5.component';
+import {CanvasEffectComponent6} from './canvas-effect/step6.component';
 
 const routes: Routes = [
     { path: 'dome-element/step1', component: DomComponent1 },
@@ -29,6 +32,9 @@ const routes: Routes = [
     { path: 'canvas-effect/step1', component: CanvasEffectComponent1 },
     { path: 'canvas-effect/step2', component: CanvasEffectComponent2 },
     { path: 'canvas-effect/step3', component: CanvasEffectComponent3 },
+    { path: 'canvas-effect/step4', component: CanvasEffectComponent4 },
+    { path: 'canvas-effect/step5', component: CanvasEffectComponent5 },
+    { path: 'canvas-effect/step6', component: CanvasEffectComponent6 },
     { path: 'sounds/step1', component: SoundComponent1 },
 ];
 

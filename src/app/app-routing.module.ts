@@ -10,6 +10,7 @@ import {CanvasComponent2} from './canvas/step2.component';
 import {CanvasComponent3} from './canvas/step3.component';
 import {CanvasComponent4} from './canvas/step4.component';
 import {CanvasComponent5} from './canvas/step5.component';
+import {CanvasComponent6} from './canvas/step6.component';
 import {SoundComponent1} from './sounds/step1.component';
 import {CanvasEffectComponent1} from './canvas-effect/step1.component';
 import {CanvasEffectComponent2} from './canvas-effect/step2.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
     { path: 'canvas/step3', component: CanvasComponent3 },
     { path: 'canvas/step4', component: CanvasComponent4 },
     { path: 'canvas/step5', component: CanvasComponent5 },
+    { path: 'canvas/step6', component: CanvasComponent6 },
     { path: 'canvas-effect/step1', component: CanvasEffectComponent1 },
     { path: 'canvas-effect/step2', component: CanvasEffectComponent2 },
     { path: 'canvas-effect/step3', component: CanvasEffectComponent3 },

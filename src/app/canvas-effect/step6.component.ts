@@ -1,8 +1,6 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 // https://code.tutsplus.com/articles/21-ridiculously-impressive-html5-canvas-experiments--net-14210
 // npm i gsap
-
-// import * as anime from 'animejs';
 import * as GSAP from 'gsap';
 
 @Component({

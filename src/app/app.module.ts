@@ -24,6 +24,10 @@ import {CanvasEffectComponent4} from './canvas-effect/step4.component';
 import {CanvasEffectComponent5} from './canvas-effect/step5.component';
 import {CanvasEffectComponent6} from './canvas-effect/step6.component';
 
+import {RxjsComponent1} from './rxjs/subject.component';
+import {RxjsComponent2} from './rxjs/subject2.component';
+import {RxjsComponent3} from './rxjs/subject3.component';
+
 import {SoundComponent1} from './sounds/step1.component';
 
 
@@ -49,6 +53,9 @@ import {SoundComponent1} from './sounds/step1.component';
     CanvasEffectComponent4,
     CanvasEffectComponent5,
     CanvasEffectComponent6,
+    RxjsComponent1,
+    RxjsComponent2,
+    RxjsComponent3
   ],
   imports: [
     BrowserModule,

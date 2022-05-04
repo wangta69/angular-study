@@ -19,6 +19,10 @@ import {CanvasEffectComponent4} from './canvas-effect/step4.component';
 import {CanvasEffectComponent5} from './canvas-effect/step5.component';
 import {CanvasEffectComponent6} from './canvas-effect/step6.component';
 
+import {RxjsComponent1} from './rxjs/subject.component';
+import {RxjsComponent2} from './rxjs/subject2.component';
+import {RxjsComponent3} from './rxjs/subject3.component';
+
 const routes: Routes = [
     { path: 'dome-element/step1', component: DomComponent1 },
     { path: 'dome-element/step2', component: DomComponent2 },
@@ -38,6 +42,9 @@ const routes: Routes = [
     { path: 'canvas-effect/step5', component: CanvasEffectComponent5 },
     { path: 'canvas-effect/step6', component: CanvasEffectComponent6 },
     { path: 'sounds/step1', component: SoundComponent1 },
+    { path: 'rxjs/subject', component: RxjsComponent1 },
+    { path: 'rxjs/subject2', component: RxjsComponent2 },
+    { path: 'rxjs/subject3', component: RxjsComponent3 },
 ];
 
 @NgModule({

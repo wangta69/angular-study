@@ -6,9 +6,10 @@ import { BehaviorSubject} from 'rxjs';
     template:``
 })
 export class RxjsComponent3{
-    private bsubject = new BehaviorSubject<number>(0);
+    private bsubject:BehaviorSubject<number>;
     constructor(
     ) {
+        this.bsubject = new BehaviorSubject(0);
         this.bsubject.subscribe({
           next: (v) => console.log('observerA: ' + v)
         });

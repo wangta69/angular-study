@@ -27,7 +27,11 @@ import {CanvasEffectComponent6} from './canvas-effect/step6.component';
 import {RxjsComponent1} from './rxjs/subject.component';
 import {RxjsComponent2} from './rxjs/subject2.component';
 import {RxjsComponent3} from './rxjs/subject3.component';
-
+import { EventService } from './rxjs/event.service';
+import { BroadCastToService } from './rxjs/subject-broadcast-to-service.component';
+import { SubscribeModule } from './rxjs/subject-subscribe-from-service.component';
+import { BroadCastToWindow } from './rxjs/subject-broadcast-to-window.component';
+import { SubscribeWindowModule } from './rxjs/subject-subscribe-from-window.component';
 import {SoundComponent1} from './sounds/step1.component';
 
 
@@ -55,13 +59,17 @@ import {SoundComponent1} from './sounds/step1.component';
     CanvasEffectComponent6,
     RxjsComponent1,
     RxjsComponent2,
-    RxjsComponent3
+    RxjsComponent3,
+    BroadCastToService,
+    BroadCastToWindow,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SubscribeModule,
+    SubscribeWindowModule
   ],
-  providers: [],
+  providers: [EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

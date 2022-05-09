@@ -22,6 +22,8 @@ import {CanvasEffectComponent6} from './canvas-effect/step6.component';
 import {RxjsComponent1} from './rxjs/subject.component';
 import {RxjsComponent2} from './rxjs/subject2.component';
 import {RxjsComponent3} from './rxjs/subject3.component';
+import { BroadCastToService } from './rxjs/subject-broadcast-to-service.component';
+import { BroadCastToWindow } from './rxjs/subject-broadcast-to-window.component';
 
 const routes: Routes = [
     { path: 'dome-element/step1', component: DomComponent1 },
@@ -45,6 +47,8 @@ const routes: Routes = [
     { path: 'rxjs/subject', component: RxjsComponent1 },
     { path: 'rxjs/subject2', component: RxjsComponent2 },
     { path: 'rxjs/subject3', component: RxjsComponent3 },
+    { path: 'rxjs/sample/service/broadcast', component: BroadCastToService },
+    { path: 'rxjs/sample/window/broadcast', component: BroadCastToWindow },
 ];
 
 @NgModule({

@@ -25,6 +25,36 @@ observerB: 2
 observerA: 3
 observerB: 3
 ```
+
+좀더 디테일할 사용법
+```
+import { Subject} from 'rxjs'; // , timer, Subject
+import { takeUntil, filter, map } from 'rxjs/operators';
+.....
+private ngUnsubscribe = new Subject();
+.....
+this.eventSvc.subscribe()
+.pipe(takeUntil(this.ngUnsubscribe))
+.pipe(filter((message: Message) => message.type === 'touched'))
+.pipe(map(message => message.payload))
+.subscribe((payload: any) => {
+});
+....
+ngOnDestroy() {
+    this.ngUnsubscribe.next(null);
+    this.ngUnsubscribe.complete();
+}
+```
+ngUnsubscribe: subscribe는 중첩되어 발생할 수 있으므로  Single Page Applilcation에서는 반드시 화면이 사라질때 같이 삭제해 주어야 한다.
+
+여기서는
+private ngUnsubscribe = new Subject(); 로 정의를 하고 .pipe(takeUntil(this.ngUnsubscribe)) this.ngUnsubscribe 있는 경우만 수신을 한다.
+ngOnDestroy() 에서는 ngUnsubscribe 를 완전히 삭제한다.
+takeUntil : 특정값이 참일 경우 실행
+filter : 특정값이 참일 경우 실행
+map : 특정값만을 리턴 , 여기서는 payload만 수신한다.
+
+
 ## BehaviorSubject
 ```
 private bsubject = new BehaviorSubject<number>(0);
@@ -180,3 +210,23 @@ export class SubscribeFromService{
 }
 ```
 
+
+### 다른예
+이벤트 수신에서 window에 세팅하고 이벤트 발생에서는 window 만 호출하여 처리하는 방식(간략해서 좋음)
+
+이벤트 정의 및 수신
+```
+import { Subject } from 'rxjs';
+constructor() {
+    // 이벤트 정의
+    (window as any).moveHandler$ = new Subject<number>();
+
+    (window as any).moveHandler$.asObservable().subscribe((moves: number) => {
+        // 수신
+    });
+}
+```
+이벤트 발생
+```
+(window as any).moveHandler$.next(this.moves);
+```

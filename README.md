@@ -54,13 +54,22 @@ export class AppComponent implements OnDestroy {
 [DOM Element](/document/domElement.md "DOM Element")
 
 ## Canvas 다루기
-[DOM Element](/document/canvas.md "Canvas")
+[Canvas](/document/canvas.md "Canvas")
 
 ## Canvas를 이용한 재미나는 효과들
-[DOM Element](/document/canvas-effect.md "Canvas Effect")
-
+[Canvas Effect](/document/canvas-effect.md "Canvas Effect")
+## 효과  다루기
+[GSAP](/document/gsap.md "GSAP")
 ## Sound  다루기
 [DOM Element](/document/sound.md "Sound")
 
+
+
 ## rxjs  다루기
-[DOM Element](/document/rxjs.md "rxjs")
+[RXJS](/document/rxjs.md "rxjs")
+
+## underScore.js 다루기
+[Under Score](/document/under-score.md "under-score")
+
+## xml 다루기
+[XML](/document/xml.md "xml")

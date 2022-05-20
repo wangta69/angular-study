@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +34,7 @@ import { SubscribeModule } from './rxjs/subject-subscribe-from-service.component
 import { BroadCastToWindow } from './rxjs/subject-broadcast-to-window.component';
 import { SubscribeWindowModule } from './rxjs/subject-subscribe-from-window.component';
 import {SoundComponent1} from './sounds/step1.component';
+import {XmlComponent1} from './xml/step1.component';
 
 
 @NgModule({
@@ -62,10 +64,12 @@ import {SoundComponent1} from './sounds/step1.component';
     RxjsComponent3,
     BroadCastToService,
     BroadCastToWindow,
+    XmlComponent1,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     SubscribeModule,
     SubscribeWindowModule
   ],

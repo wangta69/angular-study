@@ -25,6 +25,8 @@ import {RxjsComponent3} from './rxjs/subject3.component';
 import { BroadCastToService } from './rxjs/subject-broadcast-to-service.component';
 import { BroadCastToWindow } from './rxjs/subject-broadcast-to-window.component';
 
+import {XmlComponent1} from './xml/step1.component';
+
 const routes: Routes = [
     { path: 'dome-element/step1', component: DomComponent1 },
     { path: 'dome-element/step2', component: DomComponent2 },
@@ -49,6 +51,7 @@ const routes: Routes = [
     { path: 'rxjs/subject3', component: RxjsComponent3 },
     { path: 'rxjs/sample/service/broadcast', component: BroadCastToService },
     { path: 'rxjs/sample/window/broadcast', component: BroadCastToWindow },
+    { path: 'xml/step1', component: XmlComponent1 },
 ];
 
 @NgModule({

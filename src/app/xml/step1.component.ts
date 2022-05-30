@@ -16,7 +16,7 @@ export class XmlComponent1{
 
     private loadXML(){
         /*Read Data*/
-        this.http.get('assets/xmls/sokoban1.xml',  {
+        this.http.get('assets/xmls/Aruba2.xml',  {
             headers: new HttpHeaders()
                 .set('Content-Type', 'text/xml')
                 .append('Access-Control-Allow-Methods', 'GET')
@@ -54,6 +54,8 @@ export class XmlComponent1{
                 if (err) {
                     console.log(err);
                 }
+
+                const data: any = [];
                 // console.log(result.SokobanLevels.LevelCollection[0].Level);
                 for(const k of result.SokobanLevels.LevelCollection[0].Level) {
                     // console.log(k.$);
@@ -74,54 +76,101 @@ export class XmlComponent1{
                                 line[i] = ' ';
                             }
                         }
+
                         lines.push(...line)
                     }
 
-                    for (let a of lines) {
-                        // console.log(a);
-                        switch(a) {
-                            case '':
-                                a = 0;
-                                break;
-                            case '#':
-                                a = 85;
-                                break;
-                            case '.':
-                                a = 65;
-                                break;
-                            case '$':
-                                a = 10;
-                                break;
-                            case '@':
-                                a = 53;
-                                break;
-                        }
-                        // console.log(a);
-                    }
+                    // console.log(lines);
+                    //
+                    // for (let a of lines) {
+                    //     // console.log(a);
+                    //     switch(a) {
+                    //         case '':
+                    //             a = 0;
+                    //             break;
+                    //         case '#':
+                    //             a = 85;
+                    //             break;
+                    //         case '.':
+                    //             a = 64;
+                    //             break;
+                    //         case '$':
+                    //             a = 9;
+                    //             break;
+                    //         case '@':
+                    //             a = 52;
+                    //             break;
+                    //         case '*':
+                    //             a = 26; // 박스와 destination
+                    //             break;
+                    //         case '+':
+                    //             a = 26; // destination  + 플레이어
+                    //             break;
+                    //     }
+                    //     // console.log(a);
+                    // }
                     // console.log(lines);
 
-                    const maps = _.map(lines, (map) => {
+                    // const mapStatic = _.map(lines, (map) => {
+                    //     switch(map) {
+                    //         case ' ':
+                    //             return 0;
+                    //         case '#':
+                    //             return 85;
+                    //         case '.':
+                    //             return 64;
+                    //         case '$':
+                    //             return 9;
+                    //         case '@':
+                    //             return 52;
+                    //         case '*':
+                    //             return 26; // 박스와 destination
+                    //             break;
+                    //         case '+':
+                    //             return 13; // destination  + 플레이어
+                    //             break;
+                    //         default:
+                    //             return 0;
+                    //     }
+                    //     // return ''
+                    // });
+
+                    const mapStatic = _.map(lines, (map) => {
                         switch(map) {
-                            case ' ':
-                                return 0;
-                            case '#':
+                            case '#': // wall
                                 return 85;
-                            case '.':
-                                return 65;
-                            case '$':
-                                return 10;
-                            case '@':
-                                return 53;
+                            case '.': // destination
+                            case '*': // destination + box
+                            case '+': // destination  + player
+                                return 64;
                             default:
                                 return 0;
                         }
                         // return ''
                     });
 
-                    console.log(maps);
+                    const mapMovable = _.map(lines, (map) => {
+                        switch(map) {
+                            case '$': // box
+                            case '*': // destination + box
+                                return 9;
+                            case '@': // player
+                            case '+': // destination  + player
+                                return 52;
+                            default:
+                                return 0;
+                        }
+                        // return ''
+                    });
+
+                    const mydata = {id, width, height, mapstatic: mapStatic.toString(), mapmovable: mapMovable.toString()}
+                    data.push(mydata);
+                    // console.log(maps);
 
                     // 현재 sokoban 데이타를 게임에서 요구하는 sokoban 데이타로 변경
                 }
+
+                console.log(data);
 
                 // const obj = result.Employee;
                 // for (k in obj.emp) {

@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 import * as GSAP from 'gsap';
 @Component({
@@ -6,8 +6,6 @@ import * as GSAP from 'gsap';
     templateUrl: 'gsap.html',
 })
 export class GsapComponent implements AfterViewInit{
-    // private trailCB: any;
-
     constructor(
     ) {
     }
@@ -18,17 +16,14 @@ export class GsapComponent implements AfterViewInit{
     }
 
     public set() {
-        // const el = document.getElementsByClassName('color-fill');
         const el = document.getElementById('set');
         GSAP.gsap.set(el, {
-            x: 100,
-            duration: 0.1
+            x: 100
         });
     }
 
 
     public move() {
-        // const el = document.getElementsByClassName('color-fill');
         const el = document.getElementById('move');
         GSAP.gsap.to(el, {
             x: 100,
@@ -37,11 +32,10 @@ export class GsapComponent implements AfterViewInit{
     }
 
     public scale() {
-        // const el = document.getElementsByClassName('color-fill');
         const el = document.getElementById('scale');
         GSAP.gsap.to(el, {
             scale: 4,
-            duration: 0.01
+            duration: 1
         });
     }
 
@@ -49,7 +43,7 @@ export class GsapComponent implements AfterViewInit{
         const el = document.getElementsByClassName('scale')[0];
         GSAP.gsap.to(el, {
             scale: 4,
-            duration: 0.01
+            duration: 1
         });
     }
 }

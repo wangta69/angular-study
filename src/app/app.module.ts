@@ -24,6 +24,7 @@ import {CanvasEffectComponent3} from './canvas-effect/step3.component';
 import {CanvasEffectComponent4} from './canvas-effect/step4.component';
 import {CanvasEffectComponent5} from './canvas-effect/step5.component';
 import {CanvasEffectComponent6} from './canvas-effect/step6.component';
+import {GsapComponent} from './gsap/step1.component';
 
 import {RxjsComponent1} from './rxjs/subject.component';
 import {RxjsComponent2} from './rxjs/subject2.component';
@@ -65,6 +66,7 @@ import {XmlComponent1} from './xml/step1.component';
     BroadCastToService,
     BroadCastToWindow,
     XmlComponent1,
+    GsapComponent,
   ],
   imports: [
     BrowserModule,

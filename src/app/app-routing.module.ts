@@ -18,7 +18,7 @@ import {CanvasEffectComponent3} from './canvas-effect/step3.component';
 import {CanvasEffectComponent4} from './canvas-effect/step4.component';
 import {CanvasEffectComponent5} from './canvas-effect/step5.component';
 import {CanvasEffectComponent6} from './canvas-effect/step6.component';
-
+import {GsapComponent} from './gsap/step1.component';
 import {RxjsComponent1} from './rxjs/subject.component';
 import {RxjsComponent2} from './rxjs/subject2.component';
 import {RxjsComponent3} from './rxjs/subject3.component';
@@ -45,6 +45,7 @@ const routes: Routes = [
     { path: 'canvas-effect/step4', component: CanvasEffectComponent4 },
     { path: 'canvas-effect/step5', component: CanvasEffectComponent5 },
     { path: 'canvas-effect/step6', component: CanvasEffectComponent6 },
+    { path: 'gsap', component: GsapComponent },
     { path: 'sounds/step1', component: SoundComponent1 },
     { path: 'rxjs/subject', component: RxjsComponent1 },
     { path: 'rxjs/subject2', component: RxjsComponent2 },

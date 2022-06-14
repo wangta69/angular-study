@@ -1,0 +1,16 @@
+<div>Touch Start: {{startEv?.touches[0].clientX}}, {{startEv?.touches[0].clientY}}</div>
+<div>Touch onTouchEnd: {{endEv}}</div>
+<div>Touch Move: {{moveEv?.touches[0].clientX}}, {{moveEv?.touches[0].clientY}}</div>
+
+
+<div
+    style="width: 100px; height: 100px; Background-color: gray; position: absolute"
+    (touchstart)="onTouchStart($event)"
+    (touchend)="onTouchEnd($event)"
+    (touchcancel)="onTouchCancel($event)"
+    (touchmove)="onTouchMove($event)"
+    [ngStyle]="{'top': moveEv?.touches[0].clientY+'px', 'left': moveEv?.touches[0].clientX+'px'}"
+>
+ drag me
+</div>
+

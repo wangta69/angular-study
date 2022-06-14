@@ -34,9 +34,15 @@ import { BroadCastToService } from './rxjs/subject-broadcast-to-service.componen
 import { SubscribeModule } from './rxjs/subject-subscribe-from-service.component';
 import { BroadCastToWindow } from './rxjs/subject-broadcast-to-window.component';
 import { SubscribeWindowModule } from './rxjs/subject-subscribe-from-window.component';
-import {SoundComponent1} from './sounds/step1.component';
-import {XmlComponent1} from './xml/step1.component';
+import { SoundComponent1 } from './sounds/step1.component';
+import { XmlComponent1 } from './xml/step1.component';
 
+import { HammerComponent } from './mouse-keyboard-event/hammerjs.component';
+import { KeyboardComponent } from './mouse-keyboard-event/keyboard.component';
+import { MouseComponent } from './mouse-keyboard-event/mouse.component';
+import { TouchComponent } from './mouse-keyboard-event/touch.component';
+
+import { JoystickComponent } from './tools/joystick.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +73,11 @@ import {XmlComponent1} from './xml/step1.component';
     BroadCastToWindow,
     XmlComponent1,
     GsapComponent,
+    JoystickComponent,
+    HammerComponent,
+    KeyboardComponent,
+    MouseComponent,
+    TouchComponent
   ],
   imports: [
     BrowserModule,

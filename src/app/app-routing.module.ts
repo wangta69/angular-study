@@ -25,7 +25,14 @@ import {RxjsComponent3} from './rxjs/subject3.component';
 import { BroadCastToService } from './rxjs/subject-broadcast-to-service.component';
 import { BroadCastToWindow } from './rxjs/subject-broadcast-to-window.component';
 
+import { JoystickComponent } from './tools/joystick.component';
+
 import {XmlComponent1} from './xml/step1.component';
+
+import { HammerComponent } from './mouse-keyboard-event/hammerjs.component';
+import { KeyboardComponent } from './mouse-keyboard-event/keyboard.component';
+import { MouseComponent } from './mouse-keyboard-event/mouse.component';
+import { TouchComponent } from './mouse-keyboard-event/touch.component';
 
 const routes: Routes = [
     { path: 'dome-element/step1', component: DomComponent1 },
@@ -53,6 +60,11 @@ const routes: Routes = [
     { path: 'rxjs/sample/service/broadcast', component: BroadCastToService },
     { path: 'rxjs/sample/window/broadcast', component: BroadCastToWindow },
     { path: 'xml/step1', component: XmlComponent1 },
+    { path: 'tools/joystick', component: JoystickComponent },
+    { path: 'event/hammer', component: HammerComponent },
+    { path: 'event/keyboard', component: KeyboardComponent },
+    { path: 'event/mouse', component: MouseComponent },
+    { path: 'event/touch', component: TouchComponent },
 ];
 
 @NgModule({

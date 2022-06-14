@@ -1,0 +1,21 @@
+Joystick Controls.
+<hr>
+<div>
+	x: {{value.x}}, y: {{value.y}}
+</div>
+<div>
+	{{direction}}
+</div>
+
+
+<hr>
+<div style="border: 1px solid red; width: 128px; position: absolute; left:10px; top:150px;">
+	<img src="/assets/images/joystick/joystick-base.png"/>
+	<div #stick style="position: absolute; left:32px; top:32px;"
+	(touchstart)="onTouchStart($event)"
+	(touchend)="onTouchEnd($event)"
+	(touchmove)="onTouchMove($event)"
+	>
+	<img src="/assets/images/joystick/joystick-red.png"/>
+	</div>
+</div>

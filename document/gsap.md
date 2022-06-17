@@ -67,3 +67,9 @@ tl.to(el, {
 
 tl.eventCallback("onComplete", () => {this.transferring = false});
 ```
+
+## element 정보 가져오기
+```
+GSAP.gsap.getProperty([Element], 'left');
+const width = GSAP.gsap.getProperty('body', 'width');
+```

@@ -16,7 +16,7 @@ export class XmlComponent1{
 
     private loadXML(){
         /*Read Data*/
-        this.http.get('assets/xmls/Aruba3.xml',  {
+        this.http.get('assets/xmls/Aruba9.xml',  {
             headers: new HttpHeaders()
                 .set('Content-Type', 'text/xml')
                 .append('Access-Control-Allow-Methods', 'GET')

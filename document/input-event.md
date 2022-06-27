@@ -19,6 +19,11 @@
 
 # HAMMER JS
 
+## Install
+```
+npm i hammerjs
+npm i --save-dev @types/hammerjs
+```
 app.module.ts
 ```
 import { NgModule, Injectable } from '@angular/core';
@@ -53,4 +58,22 @@ export class HammerConfig extends HammerGestureConfig {
 
     ]
 
+```
+### swipe
+app.module.ts
+```
+@Injectable()
+export class HammerConfig extends HammerGestureConfig {
+    override overrides = <any> {
+        'swipe': { enable: true, direction: Hammer.DIRECTION_ALL, threshold: 1, velocity:0.1 },
+    }
+}
+```
+html
+```
+(swipe)="onSwipe($event)"
+(swipeleft)="onSwipeLeft($event)"
+(swiperight)="onSwipeRight($event)"
+(swipeup)="onSwipeUp($event)"
+(swipedown)="onSwipeDown($event)"
 ```

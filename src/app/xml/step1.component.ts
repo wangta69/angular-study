@@ -24,14 +24,14 @@ export class XmlComponent1{
                 .append('Access-Control-Allow-Headers', "Access-Control-Allow-Headers, Access-Control-Allow-Origin, Access-Control-Request-Method"),
             responseType: 'text'
         })
-            .subscribe((data) => {
-                // console.log('data >>', data);
-                this.parseXML(data)
-                .then((data: any) => {
+        .subscribe((data) => {
+            // console.log('data >>', data);
+            this.parseXML(data)
+            .then((data: any) => {
 
-                    // this.xmlItems = data;
-                });
+                // this.xmlItems = data;
             });
+        });
         /*Read Data*/
     }
 

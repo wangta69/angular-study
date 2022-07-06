@@ -1,5 +1,63 @@
 # Input Event
 
+# Keyboard Event
+```
+(keydown)="onKeyDown()"
+(keyup)="onKeyUp()"
+(keypress)="onKeyPress()"
+```
+
+# Mouse Event
+```
+(mouseover)='onMouseOver($event)'
+(mouseenter)="onMouseEnter($event)"
+(mousedown)="onMouseDown($event)"
+(mouseup)="onMouseUp($event)"
+mouseout
+mouseleave
+
+(mousewheel)="onMouseWheel($event)"
+
+(click)="onMouseClick($event)"
+(dblclick)
+(drag)
+(dragover)
+(drop)="myMethod()"
+
+(document:mouseout)
+```
+
+마우스 move 는 아래와 같이 두가지 경우로 구현
+```
+import {Component, NgModule, HostListener} from '@angular/core'
+
+@Component({
+  ...
+})
+export class MyComponent {
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(e) {
+    console.log(e);
+  }
+  ..
+}
+```
+```
+2) Similar to the above, you can also use (document:event)="handler" on any DOM element, but the above solution is prefered because the code is cleaner. By using this, it's not immediately obvious from the class that you have a global event listener, and you might add additional ones unnecessarily.
+
+@Component({
+  selector: 'my-app',
+  template: `
+    <div (document:mousemove)="onMouseMove($event)" id="box"></div>
+  `,
+})
+export class MyComponent {
+  onMouseMove(e) {
+    console.log(e);
+  }
+}
+```
+
 # TouchEvent
 - 핸드폰에 주로 사용하는 이벤트
 

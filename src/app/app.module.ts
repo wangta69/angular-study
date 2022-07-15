@@ -43,6 +43,7 @@ import { MouseComponent } from './mouse-keyboard-event/mouse.component';
 import { TouchComponent } from './mouse-keyboard-event/touch.component';
 
 import { JoystickComponent } from './tools/joystick.component';
+import { IndexDbComponent } from './indexdb/component';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { JoystickComponent } from './tools/joystick.component';
     HammerComponent,
     KeyboardComponent,
     MouseComponent,
-    TouchComponent
+    TouchComponent,
+    IndexDbComponent
   ],
   imports: [
     BrowserModule,

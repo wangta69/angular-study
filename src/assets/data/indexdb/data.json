@@ -1,0 +1,21 @@
+[
+    {
+       "index": 1,
+       "category1": "start",
+       "category2": "sample",
+       "difficulty": "easy",
+       "hint": "hellow cryptogram",
+       "text": "hellow cryptogram!!",
+       "solved": false
+   },
+   {
+        "index": 2,
+        "category1": "lyrics",
+        "category2": "animation",
+        "difficulty": "easy",
+        "hint": "let it go [Frozen] lyrics",
+        "text": "Let it go, let it go Can't hold it back anymore Let it go, let it go Turn away and slam the door I don't care what they're going to say Let the storm rage on The cold never bothered me anyway",
+        "solved": false
+    }
+
+]

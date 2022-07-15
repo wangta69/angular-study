@@ -34,6 +34,8 @@ import { KeyboardComponent } from './mouse-keyboard-event/keyboard.component';
 import { MouseComponent } from './mouse-keyboard-event/mouse.component';
 import { TouchComponent } from './mouse-keyboard-event/touch.component';
 
+import { IndexDbComponent } from './indexdb/component';
+
 const routes: Routes = [
     { path: 'dome-element/step1', component: DomComponent1 },
     { path: 'dome-element/step2', component: DomComponent2 },
@@ -65,6 +67,7 @@ const routes: Routes = [
     { path: 'event/keyboard', component: KeyboardComponent },
     { path: 'event/mouse', component: MouseComponent },
     { path: 'event/touch', component: TouchComponent },
+    { path: 'indexdb', component: IndexDbComponent },
 ];
 
 @NgModule({

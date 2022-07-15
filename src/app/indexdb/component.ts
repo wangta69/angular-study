@@ -36,7 +36,6 @@ export class IndexDbComponent {
                 .append('Access-Control-Allow-Headers', "Access-Control-Allow-Headers, Access-Control-Allow-Origin, Access-Control-Request-Method"),
             responseType: 'text'
         }).subscribe((data: any) => {
-            console.log(data);
             this.insertNewData(JSON.parse(data));
         });
 
@@ -61,6 +60,7 @@ export class IndexDbComponent {
     private retrive() {
         // 데이타 가져오기
         this.db.getAll(this.storename).then((data: any) => {
+            console.log(data);
         }, (error: any) => {
             console.error(error);
         });

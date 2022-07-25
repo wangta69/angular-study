@@ -6,6 +6,13 @@
 (keyup)="onKeyUp()"
 (keypress)="onKeyPress()"
 ```
+body에서의 키 리스너
+```
+@HostListener('document:keyup', ['$event'])
+    public onKeyUp(e: any) {
+        this.inputAlphabet(e.key.toUpperCase());
+    }
+```
 
 # Mouse Event
 ```

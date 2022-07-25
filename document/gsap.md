@@ -73,3 +73,9 @@ tl.eventCallback("onComplete", () => {this.transferring = false});
 GSAP.gsap.getProperty([Element], 'left');
 const width = GSAP.gsap.getProperty('body', 'width');
 ```
+만약 element 를 className으로 가져올경우 반드시 몇번째 인지 인식 시켜야 한다.
+```
+const el = document.getElementsByClassName('hint-div');
+const display = GSAP.gsap.getProperty(el[0], 'display');
+
+```

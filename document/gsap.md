@@ -79,3 +79,26 @@ const el = document.getElementsByClassName('hint-div');
 const display = GSAP.gsap.getProperty(el[0], 'display');
 
 ```
+
+## easy
+https://greensock.com/docs/v3/Eases
+```
+gsap.to(graph, { duration: 2.5, ease: "expo.out", y: -500 });
+```
+
+## event Callback
+https://greensock.com/docs/v3/GSAP/Tween/eventCallback()
+
+"onComplete", "onUpdate", "onStart" or "onRepeat"
+```
+gsap.to(obj, {duration: 1, x: 100, onComplete: myFunction, onCompleteParams: ["param1","param2"]});
+myAnimation.eventCallback("onComplete", myFunction, ["param1","param2"]);
+```
+
+```
+myAnimation.eventCallback("onUpdate", null);
+```
+```
+myAnimation.eventCallback("onComplete", completeHandler)
+    .eventCallback("onUpdate", updateHandler, ["param1"]).play(1);
+```

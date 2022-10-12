@@ -1,4 +1,6 @@
 # Angular Study
+## routing
+[Routing](/document/routing.md "routing")
 
 ## socket io
 ```
@@ -75,4 +77,8 @@ export class AppComponent implements OnDestroy {
 ## xml 다루기
 [XML](/document/xml.md "xml")
 
+## cryptoJs 다루기
+[CryptoJs](/document/cryptojs.md "cryptojs")
 
+## googlechart 다루기
+[GoogleChart](/document/googlechart.md "googlechart")

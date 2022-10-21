@@ -80,6 +80,23 @@ const display = GSAP.gsap.getProperty(el[0], 'display');
 
 ```
 
+## select
+```
+// Angular
+@Component({ ... })
+class MyComponent implements OnInit {
+
+  constructor(private el: ElementRef) {
+    this.q = GSAP.gsap.utils.selector(el);
+  }
+
+  ngOnInit() {    
+    // uses this.el.nativeElement.querySelectorAll() internally
+    GSAP.gsap.to(this.q(".box"), { x: 100 });
+  }
+}
+```
+
 ## easy
 https://greensock.com/docs/v3/Eases
 ```

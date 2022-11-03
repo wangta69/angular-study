@@ -68,7 +68,7 @@ export class AppComponent implements OnDestroy {
 ## Input Event 다루기 (마우스, 키보드, 터치, HammerJs)
 [Input Event](/document/input-event.md "Input Event")
 
-## rxjs  다루기
+## rxjs[ Subject, BehaviorSubject, Emit] 다루기
 [RXJS](/document/rxjs.md "rxjs")
 
 ## underScore.js 다루기

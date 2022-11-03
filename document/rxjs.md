@@ -230,3 +230,25 @@ constructor() {
 ```
 (window as any).moveHandler$.next(this.moves);
 ```
+
+### EventEmitter 를 활용한 예제
+부모 자식간에 이벤트를 주고 받을 때 유용하다.
+```
+// 이벤트 수신파트
+child.ee.subscribe((select: any) => {
+
+});
+```
+```
+// 이벤트 생성 부문
+import {EventEmitter} from '@angular/core';
+
+export class [className] {
+    public ee: EventEmitter<any> = new EventEmitter<any>();
+
+    method1() {
+        this.ee.emit([someValue]);
+    }
+}
+```
+

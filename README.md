@@ -82,3 +82,6 @@ export class AppComponent implements OnDestroy {
 
 ## googlechart 다루기
 [GoogleChart](/document/googlechart.md "googlechart")
+
+## extends
+[extends](/document/extends.md "extends")

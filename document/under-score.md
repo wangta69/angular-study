@@ -64,3 +64,9 @@ _.shuffle : 배열을 랜덤하게 섞을때
 ```
 const position = _.shuffle([50, 150, 250, 350, 450, 550]);
 ```
+
+_.sortBy : 오름차순 혹은 내림차순으로 정렬
+```
+const position = _.sortBy([150, 50, 30, 250, 350, 450, 70]); // 오름차순 정렬
+const position = _.sortBy([150, 50, 30, 250, 350, 450, 70]).reverse(); // 내림차순 정렬
+```

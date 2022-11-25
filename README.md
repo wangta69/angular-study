@@ -85,3 +85,6 @@ export class AppComponent implements OnDestroy {
 
 ## extends
 [extends](/document/extends.md "extends")
+
+## grammar
+[grammar](/document/grammar.md "grammar")

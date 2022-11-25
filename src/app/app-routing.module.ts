@@ -68,6 +68,10 @@ const routes: Routes = [
     { path: 'event/mouse', component: MouseComponent },
     { path: 'event/touch', component: TouchComponent },
     { path: 'indexdb', component: IndexDbComponent },
+    {
+        path: 'social/share/kakao',
+        loadChildren: () => import('./social/share/kakao').then(m => m.KakaoShareModule)
+    },
 ];
 
 @NgModule({

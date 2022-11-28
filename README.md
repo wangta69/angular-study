@@ -88,3 +88,6 @@ export class AppComponent implements OnDestroy {
 
 ## grammar
 [grammar](/document/grammar.md "grammar")
+
+## social Login (share)
+[social](/document/social.md "social")

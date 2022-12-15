@@ -14,4 +14,42 @@ refresh Token 은 AccessToken을 가져오는데 사용된다.
 
 로그인 구현시 먼저  refrsh token을 발급받고 이것을 이용하여 access Token 을 발급 받는다. 그리고 Access Token  을 이요하여 회원정보를 획득한다. 일부에서는  refresh  토큰없이  access Token 만을 제공받는데 access Token 은 일시적인것이라 실제  db에는  refresh 토큰을 저장하여 사용하는 것을 추천한다.
 
+# google
+https://console.firebase.google.com/ >> Authentication >> Settings >> Domains >> Add domain
+
+```
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+
+public googleLogin() {
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+        .then((result: any) => {
+        console.log('result>>', result);
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user: any = result.user;
+
+        const accessToken = user.accessToken;
+        const displayName = user.displayName;
+        const email = user.email;
+        const phoneNumber = user.phoneNumber;
+        const photoURL = user.photoURL;
+        const uid = user.uid;
+    // ...
+    }).catch((error:any) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+    });
+}
+```
+
 # Social Share

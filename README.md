@@ -89,5 +89,10 @@ export class AppComponent implements OnDestroy {
 ## grammar
 [grammar](/document/grammar.md "grammar")
 
+## NgZone
+[NgZone](/document/ng-zone.md "NgZone")
+
 ## social Login (share)
 [social](/document/social.md "social")
+
+

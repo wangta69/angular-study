@@ -1,5 +1,5 @@
 # Social Login
-
+자세한 사항하은  angular-capacitory  참조
 ## Access Token vs Refresh Token
 소셜 로그인을 다루다 보면 AccessToken, RefreshToken 이라는 용어를 종종 접한다.
 이 두가지에 대한 차이점을 알아보자.
@@ -15,6 +15,8 @@ refresh Token 은 AccessToken을 가져오는데 사용된다.
 로그인 구현시 먼저  refrsh token을 발급받고 이것을 이용하여 access Token 을 발급 받는다. 그리고 Access Token  을 이요하여 회원정보를 획득한다. 일부에서는  refresh  토큰없이  access Token 만을 제공받는데 access Token 은 일시적인것이라 실제  db에는  refresh 토큰을 저장하여 사용하는 것을 추천한다.
 
 # google
+
+## javascript
 https://console.firebase.google.com/ >> Authentication >> Settings >> Domains >> Add domain
 
 ```
@@ -51,5 +53,9 @@ public googleLogin() {
     });
 }
 ```
+## hybrid
+```
+```
+
 
 # Social Share

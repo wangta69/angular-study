@@ -68,6 +68,31 @@ import { NoticeViewPage } from './notice.view.page';
     MatIconModule
   ],
 ```
+### parameter 받기
+아래와 같이 ':id' 값 받기
+```
+{ path: 'view/:id', component: NoticeViewPage},
+```
+```
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+})
+export class NoticeViewPage {
+
+    public article: any;
+
+    constructor(
+        private activatedRoute: ActivatedRoute,
+    ) {}
+
+    ngOnInit() {
+        this.activatedRoute.params.subscribe(params => {
+          console.log(params.id);
+        });
+    }
+}
+```
 
 ### CanActivateGuard
 - auth-guard.service.ts

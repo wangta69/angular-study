@@ -68,3 +68,70 @@ import { NoticeViewPage } from './notice.view.page';
     MatIconModule
   ],
 ```
+
+### CanActivateGuard
+- auth-guard.service.ts
+```
+import { Injectable } from '@angular/core';
+import { Router, CanActivate } from '@angular/router';
+import { AuthService } from './auth.service';
+@Injectable()
+export class AuthGuardService implements CanActivate {
+    constructor(
+        private auth: AuthService,
+        private router: Router
+    ) {}
+
+    canActivate(): boolean {
+        if (this.auth.isAuthenticated()) {
+            this.router.navigate(['/auth/account']);
+            return false;
+        }
+        return true;
+    }
+}
+```
+module.ts
+```
+import { AuthGuardService } from './auth-guard.service';
+@NgModule({
+    providers: [AuthGuardService]
+})
+```
+app.routes.ts
+```
+import { AuthGuardService } from './auth-guard.service';
+export const appRoutes: Routes = [
+    ......................
+  { path: 'product', component: ProductComponent, canActivate : [AuthGuardService] },
+
+];
+
+```
+
+### routerLink routerLinkActive
+module.ts
+```
+import { RouterModule} from '@angular/router';
+```
+component.ts
+```
+<a routerLink="/link/page" routerLinkActive="active" >
+</a>
+```
+
+component.ts
+```
+import { Router } from '@angular/router';
+..................
+constructor(
+        private router: Router,
+    ) {
+        this.router.navigate(['/some-route']);
+    }
+```
+url  변경없이 페이지만 바꾸기
+```
+this.router.navigate(['/some-route'], { skipLocationChange: true });
+```
+

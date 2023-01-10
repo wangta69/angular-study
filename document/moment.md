@@ -48,6 +48,10 @@ console.log(`Difference is ${dateB.diff(dateC, 'days')} day(s)`); // Difference 
 console.log(`Difference is ${dateB.diff(dateC, 'weeks')} week(s)`); // Difference is 4 week(s)
 console.log(`Difference is ${dateB.diff(dateC, 'months')} month(s)`); // Difference is 1 month(s)
 ```
-
+나이구하기
+```
+const birth = '19900909';
+const age = moment().diff(moment(birth).format('YYYYMMDD'), 'years');
+```
 
 

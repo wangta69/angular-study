@@ -2,6 +2,9 @@
 ## routing
 [Routing](/document/routing.md "routing")
 
+## dialog
+[Dialog](/document/dialog.md "dialog")
+
 ## DOM Element 다루기
 [DOM Element](/document/domElement.md "DOM Element")
 ## Canvas 다루기

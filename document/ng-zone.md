@@ -15,7 +15,7 @@ constructor(
 function testNzZone() {
     this.zone.run(() => {
         this.mydate = 'someThing '
-    }
+    });
 }
 
 ```

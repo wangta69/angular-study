@@ -37,13 +37,10 @@ export class DialogAnimationsExampleDialog {
 import {Component, Inject} from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
-export interface DialogData {
-  animal: 'panda' | 'unicorn' | 'lion';
-}
-
 /**
  * @title Injecting data when opening a dialog
  */
+```
 ```
 @Component({
   selector: 'dialog-data-example',
@@ -53,22 +50,33 @@ export class DialogDataExample {
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
-    this.dialog.open(DialogDataExampleDialog, {
+    const dialogRef = this.dialog.open(DialogDataExampleDialog, {
       data: {
         animal: 'panda',
       },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.selectedOption = result;
     });
   }
 }
 ```
 ```
 import {Inject} from '@angular/core';
-import { MAT_DIALOG_DATA, } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 @Component({
   selector: 'dialog-data-example-dialog',
   templateUrl: 'dialog-data-example-dialog.html',
 })
 export class DialogDataExampleDialog {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any
+    public dialogRef: MatDialogRef<DialogDataExampleDialog>,
+    ) {}
+
+   close(): void {
+      this.dialogRef.close([Data to Opener]);
+    }
 }
 ```

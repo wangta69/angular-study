@@ -137,7 +137,7 @@ export const appRoutes: Routes = [
 ### routerLink routerLinkActive
 module.ts
 ```
-import { RouterModule} from '@angular/router';
+import {RouterModule} from '@angular/router';
 ```
 component.ts
 ```
@@ -155,8 +155,13 @@ constructor(
         this.router.navigate(['/some-route']);
     }
 ```
-url  변경없이 페이지만 바꾸기
+history에 포함하지 않고 이동. back할 때 이동하지 않음.
 ```
 this.router.navigate(['/some-route'], { skipLocationChange: true });
+```
+
+url을 현재 주소로 교체할 것인지 여부.
+```
+this.router.navigate(['/some-route'], { replaceUrl: true });
 ```
 

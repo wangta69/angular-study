@@ -45,6 +45,8 @@ import { TouchComponent } from './mouse-keyboard-event/touch.component';
 import { JoystickComponent } from './tools/joystick.component';
 import { IndexDbComponent } from './indexdb/component';
 
+import { AnimationFrameComponent1 } from './animation-frame/step1.component';
+import { AnimationFrameComponent2 } from './animation-frame/step2.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +81,9 @@ import { IndexDbComponent } from './indexdb/component';
     KeyboardComponent,
     MouseComponent,
     TouchComponent,
-    IndexDbComponent
+    IndexDbComponent,
+    AnimationFrameComponent1,
+    AnimationFrameComponent2
   ],
   imports: [
     BrowserModule,

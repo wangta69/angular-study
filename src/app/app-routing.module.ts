@@ -35,6 +35,8 @@ import { MouseComponent } from './mouse-keyboard-event/mouse.component';
 import { TouchComponent } from './mouse-keyboard-event/touch.component';
 
 import { IndexDbComponent } from './indexdb/component';
+import { AnimationFrameComponent1 } from './animation-frame/step1.component';
+import { AnimationFrameComponent2 } from './animation-frame/step2.component';
 
 const routes: Routes = [
     { path: 'dome-element/step1', component: DomComponent1 },
@@ -68,9 +70,11 @@ const routes: Routes = [
     { path: 'event/mouse', component: MouseComponent },
     { path: 'event/touch', component: TouchComponent },
     { path: 'indexdb', component: IndexDbComponent },
+    { path: 'animation-frame/requestAnimationFrame', component: AnimationFrameComponent1 },
+    { path: 'animation-frame/timer', component: AnimationFrameComponent2 },
     {
-        path: 'social/share/kakao',
-        loadChildren: () => import('./social/share/kakao').then(m => m.KakaoShareModule)
+      path: 'social/share/kakao',
+      loadChildren: () => import('./social/share/kakao').then(m => m.KakaoShareModule)
     },
 ];
 

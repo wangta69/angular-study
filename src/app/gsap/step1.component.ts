@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 import * as GSAP from 'gsap';
 @Component({
@@ -6,13 +6,16 @@ import * as GSAP from 'gsap';
     templateUrl: 'gsap.html',
 })
 export class GsapComponent implements AfterViewInit{
+    @ViewChild('myElement', {static: true}) divRef: ElementRef<HTMLDivElement> = {} as ElementRef;
     constructor(
     ) {
     }
 
     ngAfterViewInit(){
-
-
+        GSAP.gsap.to(this.divRef.nativeElement, {
+            opacity: 1
+        });
+        
     }
 
     public set() {

@@ -19,6 +19,7 @@ import {CanvasEffectComponent4} from './canvas-effect/step4.component';
 import {CanvasEffectComponent5} from './canvas-effect/step5.component';
 import {CanvasEffectComponent6} from './canvas-effect/step6.component';
 import {GsapComponent} from './gsap/step1.component';
+import { TweenJsComponent1 } from './tweenjs/step1.component';
 import {RxjsComponent1} from './rxjs/subject.component';
 import {RxjsComponent2} from './rxjs/subject2.component';
 import {RxjsComponent3} from './rxjs/subject3.component';
@@ -37,6 +38,8 @@ import { TouchComponent } from './mouse-keyboard-event/touch.component';
 import { IndexDbComponent } from './indexdb/component';
 import { AnimationFrameComponent1 } from './animation-frame/step1.component';
 import { AnimationFrameComponent2 } from './animation-frame/step2.component';
+
+
 
 const routes: Routes = [
     { path: 'dome-element/step1', component: DomComponent1 },
@@ -57,6 +60,7 @@ const routes: Routes = [
     { path: 'canvas-effect/step5', component: CanvasEffectComponent5 },
     { path: 'canvas-effect/step6', component: CanvasEffectComponent6 },
     { path: 'gsap', component: GsapComponent },
+    { path: 'tweenjs', component: TweenJsComponent1 },
     { path: 'sounds/step1', component: SoundComponent1 },
     { path: 'rxjs/subject', component: RxjsComponent1 },
     { path: 'rxjs/subject2', component: RxjsComponent2 },

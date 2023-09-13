@@ -47,6 +47,8 @@ import { IndexDbComponent } from './indexdb/component';
 
 import { AnimationFrameComponent1 } from './animation-frame/step1.component';
 import { AnimationFrameComponent2 } from './animation-frame/step2.component';
+
+import { TweenJsComponent1 } from './tweenjs/step1.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,7 +85,8 @@ import { AnimationFrameComponent2 } from './animation-frame/step2.component';
     TouchComponent,
     IndexDbComponent,
     AnimationFrameComponent1,
-    AnimationFrameComponent2
+    AnimationFrameComponent2,
+    TweenJsComponent1
   ],
   imports: [
     BrowserModule,

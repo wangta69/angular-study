@@ -34,8 +34,4 @@ export class TweenJsComponent1 implements AfterViewInit{
       .start() // Start the tween immediately.
 
   }
-
-   
-
-    // 
-  }
+}

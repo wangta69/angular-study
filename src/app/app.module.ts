@@ -17,6 +17,7 @@ import {CanvasComponent3} from './canvas/step3.component';
 import {CanvasComponent4} from './canvas/step4.component';
 import {CanvasComponent5} from './canvas/step5.component';
 import {CanvasComponent6} from './canvas/step6.component';
+import {CanvasEffectComponent7} from './canvas-effect/step7.component';
 
 import {CanvasEffectComponent1} from './canvas-effect/step1.component';
 import {CanvasEffectComponent2} from './canvas-effect/step2.component';
@@ -71,6 +72,7 @@ import { TweenJsComponent1 } from './tweenjs/step1.component';
     CanvasEffectComponent4,
     CanvasEffectComponent5,
     CanvasEffectComponent6,
+    CanvasEffectComponent7,
     RxjsComponent1,
     RxjsComponent2,
     RxjsComponent3,

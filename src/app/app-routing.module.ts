@@ -11,6 +11,8 @@ import {CanvasComponent3} from './canvas/step3.component';
 import {CanvasComponent4} from './canvas/step4.component';
 import {CanvasComponent5} from './canvas/step5.component';
 import {CanvasComponent6} from './canvas/step6.component';
+
+
 import {SoundComponent1} from './sounds/step1.component';
 import {CanvasEffectComponent1} from './canvas-effect/step1.component';
 import {CanvasEffectComponent2} from './canvas-effect/step2.component';
@@ -18,6 +20,8 @@ import {CanvasEffectComponent3} from './canvas-effect/step3.component';
 import {CanvasEffectComponent4} from './canvas-effect/step4.component';
 import {CanvasEffectComponent5} from './canvas-effect/step5.component';
 import {CanvasEffectComponent6} from './canvas-effect/step6.component';
+import {CanvasEffectComponent7} from './canvas-effect/step7.component';
+
 import {GsapComponent} from './gsap/step1.component';
 import { TweenJsComponent1 } from './tweenjs/step1.component';
 import {RxjsComponent1} from './rxjs/subject.component';
@@ -59,6 +63,7 @@ const routes: Routes = [
     { path: 'canvas-effect/step4', component: CanvasEffectComponent4 },
     { path: 'canvas-effect/step5', component: CanvasEffectComponent5 },
     { path: 'canvas-effect/step6', component: CanvasEffectComponent6 },
+    { path: 'canvas-effect/step7', component: CanvasEffectComponent7 },
     { path: 'gsap', component: GsapComponent },
     { path: 'tweenjs', component: TweenJsComponent1 },
     { path: 'sounds/step1', component: SoundComponent1 },

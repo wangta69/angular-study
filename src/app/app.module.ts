@@ -50,6 +50,9 @@ import { AnimationFrameComponent1 } from './animation-frame/step1.component';
 import { AnimationFrameComponent2 } from './animation-frame/step2.component';
 
 import { TweenJsComponent1 } from './tweenjs/step1.component';
+
+import { BitMaskComponent1 } from './bit-mask/default.component';
+import { BitMaskComponent2 } from './bit-mask/pattern.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -88,7 +91,9 @@ import { TweenJsComponent1 } from './tweenjs/step1.component';
     IndexDbComponent,
     AnimationFrameComponent1,
     AnimationFrameComponent2,
-    TweenJsComponent1
+    TweenJsComponent1,
+    BitMaskComponent1,
+    BitMaskComponent2
   ],
   imports: [
     BrowserModule,
